@@ -209,7 +209,7 @@ function HomePage({ setActivePage }) {
             </div>
           </div>
           <div className="rounded-[2rem] border border-white/10 bg-white/10 p-3 shadow-2xl sm:p-4">
-            <video src="/videos/repair-demo.mp4" autoPlay loop muted playsInline className="h-56 w-full rounded-[1.5rem] object-cover sm:h-80" />
+            <img src="/images/tow-truck.png" alt="Mobile diesel service truck" className="h-56 w-full rounded-[1.5rem] object-cover sm:h-80" />
             <div className="mt-4 grid gap-3 sm:grid-cols-3">
               <TrustCard icon={Star} text="70+ excellent Google reviews" />
               <TrustCard icon={Truck} text="Mobile service available" />
