@@ -240,7 +240,7 @@ export default function ElevatedAutoDieselRepair() {
             </motion.div>
             <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.7, delay: 0.15 }} className="rounded-[2rem] border border-white/10 bg-white/10 p-4 shadow-2xl">
               <div className="aspect-[4/5] rounded-[1.5rem] bg-gradient-to-br from-slate-700 via-slate-900 to-black p-8 text-white">
-                <div className="flex h-full flex-col justify-between">
+                <div className="flex h-full flex-col gap-8">
                   <div>
                     <p className="text-sm uppercase tracking-[0.3em] text-slate-300">Larimer County, CO</p>
                     <h2 className="mt-5 text-4xl font-bold">Auto Repair—Elevated.</h2>
@@ -257,49 +257,6 @@ export default function ElevatedAutoDieselRepair() {
                 </div>
               </div>
             </motion.div>
-          </div>
-        </section>
-
-        <section id="services" className="px-5 py-24 md:px-8">
-          <div className="mx-auto max-w-7xl">
-            <SectionHeader
-              eyebrow="Services"
-              title="Complete Mobile Auto, Diesel & Specialty Repair"
-              text="From routine maintenance to complex repairs, Elevated Auto & Diesel Repair provides high-quality service with the convenience of mobile support."
-            />
-            <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-              {services.map((service, index) => (
-                <motion.div key={service.title} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: index * 0.03 }} className="rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
-                  <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-950 text-white">
-                    <Wrench className="h-5 w-5" />
-                  </div>
-                  <h3 className="text-xl font-bold text-slate-950">{service.title}</h3>
-                  <p className="mt-3 leading-7 text-slate-600">{service.description}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section id="gallery" className="bg-slate-50 px-5 py-24 md:px-8">
-          <div className="mx-auto max-w-7xl">
-            <SectionHeader
-              eyebrow="Gallery"
-              title="Real Repairs. Real Results."
-              text="A curated look at diesel engine repair, welding fabrication, mobile truck service, diagnostics, and heavy-duty repair work completed by Elevated Auto & Diesel Repair."
-            />
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {galleryImages.map((image) => (
-                <motion.article key={image.src} initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.45 }} className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
-                  <img src={image.src} alt={`${image.title} in Larimer County, CO`} className="h-72 w-full object-cover" />
-                  <div className="p-6">
-                    <p className="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-slate-500">{image.category}</p>
-                    <h3 className="text-xl font-bold text-slate-950">{image.title}</h3>
-                    <p className="mt-3 leading-7 text-slate-600">{image.caption}</p>
-                  </div>
-                </motion.article>
-              ))}
-            </div>
           </div>
         </section>
 
@@ -351,6 +308,49 @@ export default function ElevatedAutoDieselRepair() {
               <a href="tel:+19709660473" className="inline-flex items-center justify-center rounded-2xl border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-slate-100">
                 <Phone className="mr-2 h-4 w-4" /> Call 970-966-0473
               </a>
+            </div>
+          </div>
+        </section>
+
+        <section id="gallery" className="bg-slate-50 px-5 py-24 md:px-8">
+          <div className="mx-auto max-w-7xl">
+            <SectionHeader
+              eyebrow="Gallery"
+              title="Real Repairs. Real Results."
+              text="A curated look at diesel engine repair, welding fabrication, mobile truck service, diagnostics, and heavy-duty repair work completed by Elevated Auto & Diesel Repair."
+            />
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {galleryImages.map((image) => (
+                <motion.article key={image.src} initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.45 }} className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+                  <img src={image.src} alt={`${image.title} in Larimer County, CO`} className="h-72 w-full object-cover" />
+                  <div className="p-6">
+                    <p className="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-slate-500">{image.category}</p>
+                    <h3 className="text-xl font-bold text-slate-950">{image.title}</h3>
+                    <p className="mt-3 leading-7 text-slate-600">{image.caption}</p>
+                  </div>
+                </motion.article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="services" className="px-5 py-24 md:px-8">
+          <div className="mx-auto max-w-7xl">
+            <SectionHeader
+              eyebrow="Services"
+              title="Complete Mobile Auto, Diesel & Specialty Repair"
+              text="From routine maintenance to complex repairs, Elevated Auto & Diesel Repair provides high-quality service with the convenience of mobile support."
+            />
+            <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+              {services.map((service, index) => (
+                <motion.div key={service.title} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: index * 0.03 }} className="rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+                  <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-950 text-white">
+                    <Wrench className="h-5 w-5" />
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-950">{service.title}</h3>
+                  <p className="mt-3 leading-7 text-slate-600">{service.description}</p>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
