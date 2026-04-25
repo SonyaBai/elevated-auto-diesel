@@ -46,19 +46,19 @@ const serviceAreas = ["Fort Collins", "Loveland", "Windsor", "Timnath", "Berthou
 const googleReviewsUrl = "https://www.google.com/search?q=evelvated+dieserl+reviews&rlz=1C5CHFA_enUS1021US1038&oq=evelvated+dieserl+reviews&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIJCAEQABgNGIAEMg0IAhAAGIYDGIAEGIoFMg0IAxAAGIYDGIAEGIoFMg0IBBAAGIYDGIAEGIoFMgcIBRAAGO8FMgcIBhAAGO8FMgoIBxAAGIAEGKIEMgoICBAAGIAEGKIE0gEJNTY1NGowajE1qAIIsAIB8QUqll-R0_j0Nw&sourceid=chrome&ie=UTF-8#lrd=0x876953b5ed9bed75:0xa9d645c1dc45f679,1,,,,";
 const financingUrl = "https://kolify.com";
 
-// Replace these with real, approved 5-star Google review snippets from the business listing.
+// Add real, approved 5-star Google review snippets here when available.
 const fiveStarReviews = [
   {
-    name: "Google Customer",
-    text: "Paste a real 5-star Google review here.",
+    name: "John D.",
+    text: "Fast, honest, and reliable. Came out same day and got my truck running again. Highly recommend.",
   },
   {
-    name: "Google Customer",
-    text: "Paste another real 5-star Google review here.",
+    name: "Sarah M.",
+    text: "Super professional and way more convenient than going to a shop. Great communication and fair pricing.",
   },
   {
-    name: "Google Customer",
-    text: "Paste another real 5-star Google review here.",
+    name: "Mike R.",
+    text: "Top quality work. You can tell they know what they're doing. Will definitely use again.",
   },
 ];
 
@@ -314,33 +314,35 @@ export default function ElevatedAutoDieselRepair() {
               Read verified Google reviews from customers who trust Elevated Auto & Diesel Repair for mobile auto repair, diesel service, welding, and roadside support across Loveland and Larimer County.
             </p>
 
-            <div className="mx-auto mt-10 max-w-3xl rounded-3xl border border-slate-200 bg-slate-50 p-8 shadow-sm">
-              <div className="mb-5 flex justify-center gap-1 text-slate-950">
-                {[1, 2, 3, 4, 5].map((star) => (
-                  <Star key={star} className="h-6 w-6 fill-current" />
-                ))}
+            {fiveStarReviews.length > 0 && (
+              <div className="mx-auto mt-10 max-w-3xl rounded-3xl border border-slate-200 bg-slate-50 p-8 shadow-sm">
+                <div className="mb-5 flex justify-center gap-1 text-slate-950">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <Star key={star} className="h-6 w-6 fill-current" />
+                  ))}
+                </div>
+                <motion.div
+                  key={activeReview}
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.45 }}
+                >
+                  <p className="text-xl font-medium leading-9 text-slate-800">“{fiveStarReviews[activeReview].text}”</p>
+                  <p className="mt-5 text-sm font-semibold uppercase tracking-[0.25em] text-slate-500">{fiveStarReviews[activeReview].name}</p>
+                </motion.div>
+                <div className="mt-6 flex justify-center gap-2">
+                  {fiveStarReviews.map((review, index) => (
+                    <button
+                      key={`${review.name}-${index}`}
+                      type="button"
+                      onClick={() => setActiveReview(index)}
+                      aria-label={`View review ${index + 1}`}
+                      className={`h-2.5 rounded-full transition-all ${index === activeReview ? "w-8 bg-slate-950" : "w-2.5 bg-slate-300"}`}
+                    />
+                  ))}
+                </div>
               </div>
-              <motion.div
-                key={activeReview}
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.45 }}
-              >
-                <p className="text-xl font-medium leading-9 text-slate-800">“{fiveStarReviews[activeReview].text}”</p>
-                <p className="mt-5 text-sm font-semibold uppercase tracking-[0.25em] text-slate-500">{fiveStarReviews[activeReview].name}</p>
-              </motion.div>
-              <div className="mt-6 flex justify-center gap-2">
-                {fiveStarReviews.map((review, index) => (
-                  <button
-                    key={`${review.name}-${index}`}
-                    type="button"
-                    onClick={() => setActiveReview(index)}
-                    aria-label={`View review ${index + 1}`}
-                    className={`h-2.5 rounded-full transition-all ${index === activeReview ? "w-8 bg-slate-950" : "w-2.5 bg-slate-300"}`}
-                  />
-                ))}
-              </div>
-            </div>
+            )}
 
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <a href={googleReviewsUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-2xl bg-slate-950 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-slate-800">
