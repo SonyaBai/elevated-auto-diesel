@@ -139,7 +139,7 @@ function CTAButton({ children, variant = "primary" }) {
     ? "bg-slate-950 text-white hover:bg-slate-800"
     : "border border-slate-300 bg-white text-slate-950 hover:bg-slate-100";
   return (
-    <a href="#contact" className={`inline-flex items-center justify-center rounded-2xl px-6 py-3 text-sm font-semibold shadow-sm transition ${classes}`}>
+    <a href="#contact" className={`inline-flex min-w-0 items-center justify-center rounded-2xl px-4 py-3 text-center text-sm font-semibold shadow-sm transition sm:px-6 ${classes}`}>
       {children}
       <ArrowRight className="ml-2 h-4 w-4" />
     </a>
@@ -158,7 +158,7 @@ export default function ElevatedAutoDieselRepair() {
     return () => clearInterval(timer);
   }, []);
   return (
-    <div className="min-h-screen bg-white text-slate-950">
+    <div className="min-h-screen overflow-x-hidden bg-white text-slate-950">
       <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 md:px-8 md:py-4">
           <a href="#home" className="flex min-w-0 items-center gap-3">
@@ -193,31 +193,31 @@ export default function ElevatedAutoDieselRepair() {
               <img
                 src="/images/elevated-auto-diesel-logo-phone.png"
                 alt="Elevated Auto & Diesel Repair logo with phone number 970-966-0473"
-                className="mb-5 w-full max-w-sm rounded-2xl bg-white p-3 shadow-2xl sm:max-w-md sm:rounded-3xl sm:p-4"
+                className="mb-5 block w-full max-w-[320px] rounded-2xl bg-white p-2 shadow-2xl sm:max-w-md sm:rounded-3xl sm:p-4"
               />
-              <div className="flex flex-col gap-3">
-                <p className="inline-flex w-fit rounded-full border border-white/15 px-4 py-2 text-sm font-semibold uppercase tracking-[0.25em] text-slate-300">
+              <div className="flex max-w-full flex-col gap-3">
+                <p className="inline-flex max-w-full rounded-full border border-white/15 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-300 sm:px-4 sm:text-sm sm:tracking-[0.25em]">
                   Premium Mobile Auto & Diesel Repair
                 </p>
-                <a href={financingUrl} target="_blank" rel="noopener noreferrer" className="inline-flex w-fit items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-white hover:bg-white/20">
+                <a href={financingUrl} target="_blank" rel="noopener noreferrer" className="inline-flex w-fit items-center gap-2 rounded-full bg-white/10 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-white hover:bg-white/20 sm:px-4 sm:text-xs sm:tracking-[0.25em]">
                   <ShieldCheck className="h-4 w-4" /> Financing Available
                 </a>
               </div>
-              <h1 className="mt-5 text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-7xl">
+              <h1 className="mt-5 max-w-full text-3xl font-bold leading-tight tracking-tight text-white sm:text-5xl md:text-7xl">
                 Elevated Auto & Diesel Service, Delivered to You.
               </h1>
-              <p className="mt-5 max-w-xl text-base leading-7 text-slate-300 sm:text-lg sm:leading-8">
+              <p className="mt-5 max-w-full text-base leading-7 text-slate-300 sm:max-w-xl sm:text-lg sm:leading-8">
                 Elevated Auto & Diesel Repair provides modern mobile auto repair, diesel repair, RV repair, roadside assistance, hydraulic cylinder repair, welding fabrication, and light autobody repair throughout Loveland, Larimer County, and surrounding Northern Colorado communities.
               </p>
-              <div className="mt-7 grid gap-3 sm:grid-cols-2 lg:flex lg:flex-wrap">
-                <a href={financingUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-2xl border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
+              <div className="mt-7 grid max-w-full gap-3 sm:grid-cols-2 lg:flex lg:flex-wrap">
+                <a href={financingUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-w-0 items-center justify-center rounded-2xl border border-white/20 px-4 py-3 text-center text-sm font-semibold text-white transition hover:bg-white/10 sm:px-6">
                   Apply for Financing
                 </a>
-                <a href="tel:+19709660473" className="inline-flex items-center justify-center rounded-2xl bg-white px-6 py-3 text-sm font-semibold text-slate-950 shadow-sm transition hover:bg-slate-100">
+                <a href="tel:+19709660473" className="inline-flex min-w-0 items-center justify-center rounded-2xl bg-white px-4 py-3 text-center text-sm font-semibold text-slate-950 shadow-sm transition hover:bg-slate-100 sm:px-6">
                   <Phone className="mr-2 h-4 w-4" /> Call 970-966-0473
                 </a>
                 <CTAButton>Request Service</CTAButton>
-                <a href={googleReviewsUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-2xl border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
+                <a href={googleReviewsUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-w-0 items-center justify-center rounded-2xl border border-white/20 px-4 py-3 text-center text-sm font-semibold text-white transition hover:bg-white/10 sm:px-6">
                   <Star className="mr-2 h-4 w-4" /> View Reviews
                 </a>
               </div>
