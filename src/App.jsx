@@ -160,14 +160,18 @@ export default function ElevatedAutoDieselRepair() {
   return (
     <div className="min-h-screen bg-white text-slate-950">
       <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8">
-          <a href="#home" className="flex items-center gap-3">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 md:px-8 md:py-4">
+          <a href="#home" className="flex min-w-0 items-center gap-3">
             <img
               src="/images/elevated-auto-diesel-logo-phone.png"
               alt="Elevated Auto & Diesel Repair logo"
-              className="h-14 w-auto rounded-xl bg-white object-contain"
+              className="h-10 w-auto max-w-[190px] rounded-xl bg-white object-contain sm:h-12 sm:max-w-[260px] md:h-14 md:max-w-none"
             />
           </a>
+          <div className="flex shrink-0 items-center gap-2 md:hidden">
+            <a href="tel:+19709660473" className="rounded-xl bg-slate-950 px-3 py-2 text-xs font-semibold text-white">Call</a>
+            <a href="#contact" className="rounded-xl border border-slate-300 px-3 py-2 text-xs font-semibold text-slate-950">Book</a>
+          </div>
           <nav className="hidden items-center gap-8 text-sm font-medium text-slate-700 md:flex">
             <a href="#services" className="hover:text-slate-950">Services</a>
             <a href="#gallery" className="hover:text-slate-950">Gallery</a>
@@ -184,12 +188,12 @@ export default function ElevatedAutoDieselRepair() {
       <main id="home">
         <section className="relative overflow-hidden bg-slate-950">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(148,163,184,0.25),transparent_35%),linear-gradient(135deg,rgba(255,255,255,0.08),transparent)]" />
-          <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-5 py-24 md:grid-cols-2 md:px-8 md:py-32">
+          <div className="relative mx-auto grid max-w-7xl items-center gap-8 px-4 py-10 sm:px-5 sm:py-16 md:grid-cols-2 md:gap-12 md:px-8 md:py-32">
             <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
               <img
                 src="/images/elevated-auto-diesel-logo-phone.png"
                 alt="Elevated Auto & Diesel Repair logo with phone number 970-966-0473"
-                className="mb-6 max-w-md rounded-3xl bg-white p-4 shadow-2xl"
+                className="mb-5 w-full max-w-sm rounded-2xl bg-white p-3 shadow-2xl sm:max-w-md sm:rounded-3xl sm:p-4"
               />
               <div className="flex flex-col gap-3">
                 <p className="inline-flex w-fit rounded-full border border-white/15 px-4 py-2 text-sm font-semibold uppercase tracking-[0.25em] text-slate-300">
@@ -199,13 +203,13 @@ export default function ElevatedAutoDieselRepair() {
                   <ShieldCheck className="h-4 w-4" /> Financing Available
                 </a>
               </div>
-              <h1 className="text-5xl font-bold tracking-tight text-white md:text-7xl">
+              <h1 className="mt-5 text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-7xl">
                 Elevated Auto & Diesel Service, Delivered to You.
               </h1>
-              <p className="mt-6 max-w-xl text-lg leading-8 text-slate-300">
+              <p className="mt-5 max-w-xl text-base leading-7 text-slate-300 sm:text-lg sm:leading-8">
                 Elevated Auto & Diesel Repair provides modern mobile auto repair, diesel repair, RV repair, roadside assistance, hydraulic cylinder repair, welding fabrication, and light autobody repair throughout Loveland, Larimer County, and surrounding Northern Colorado communities.
               </p>
-              <div className="mt-9 flex flex-col gap-4 sm:flex-row">
+              <div className="mt-7 grid gap-3 sm:grid-cols-2 lg:flex lg:flex-wrap">
                 <a href={financingUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-2xl border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
                   Apply for Financing
                 </a>
@@ -217,11 +221,11 @@ export default function ElevatedAutoDieselRepair() {
                   <Star className="mr-2 h-4 w-4" /> View Reviews
                 </a>
               </div>
-              <div className="mt-10 grid max-w-xl grid-cols-3 gap-4 text-white">
+              <div className="mt-8 grid max-w-xl grid-cols-1 gap-3 text-white sm:grid-cols-3 sm:gap-4">
               {/* Gallery Preview */}
-              <div className="col-span-3 grid grid-cols-3 gap-3">
+              <div className="sm:col-span-3 grid grid-cols-3 gap-2 sm:gap-3">
                 {galleryImages.slice(0, 6).map((image) => (
-                  <img key={image.src} src={image.src} alt={`${image.title} - Elevated Auto & Diesel Repair`} className="h-24 w-full rounded-xl object-cover" />
+                  <img key={image.src} src={image.src} alt={`${image.title} - Elevated Auto & Diesel Repair`} className="h-20 w-full rounded-xl object-cover sm:h-24" />
                 ))}
               </div>
                 <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
@@ -238,15 +242,15 @@ export default function ElevatedAutoDieselRepair() {
                 </div>
               </div>
             </motion.div>
-            <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.7, delay: 0.15 }} className="rounded-[2rem] border border-white/10 bg-white/10 p-4 shadow-2xl">
-              <div className="aspect-[4/5] rounded-[1.5rem] bg-gradient-to-br from-slate-700 via-slate-900 to-black p-8 text-white">
+            <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.7, delay: 0.15 }} className="rounded-[2rem] border border-white/10 bg-white/10 p-3 shadow-2xl sm:p-4">
+              <div className="rounded-[1.5rem] bg-gradient-to-br from-slate-700 via-slate-900 to-black p-5 text-white sm:p-8 md:aspect-[4/5]">
                 <div className="flex h-full flex-col">
                   <div>
                     <p className="text-sm uppercase tracking-[0.3em] text-slate-300">Larimer County, CO</p>
-                    <h2 className="mt-5 text-4xl font-bold">Auto Repair—Elevated.</h2>
+                    <h2 className="mt-4 text-3xl font-bold sm:text-4xl">Auto Repair—Elevated.</h2>
                     <p className="mt-4 text-slate-300">Dealership-level attention without the shop visit.</p>
                   </div>
-                  <div className="mt-6 space-y-4">
+                  <div className="mt-5 space-y-3 sm:space-y-4">
                     {["Engine & transmission repair", "Diesel, RV & mobile service", "Roadside assistance", "Hydraulics, welding & light body work"].map((item) => (
                       <div key={item} className="flex items-center gap-3 rounded-2xl bg-white/10 p-4">
                         <CheckCircle className="h-5 w-5 text-slate-200" />
