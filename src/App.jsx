@@ -240,19 +240,29 @@ export default function ElevatedAutoDieselRepair() {
             </motion.div>
             <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.7, delay: 0.15 }} className="rounded-[2rem] border border-white/10 bg-white/10 p-4 shadow-2xl">
               <div className="aspect-[4/5] rounded-[1.5rem] bg-gradient-to-br from-slate-700 via-slate-900 to-black p-8 text-white">
-                <div className="flex h-full flex-col gap-8">
+                <div className="flex h-full flex-col">
                   <div>
                     <p className="text-sm uppercase tracking-[0.3em] text-slate-300">Larimer County, CO</p>
                     <h2 className="mt-5 text-4xl font-bold">Auto Repair—Elevated.</h2>
                     <p className="mt-4 text-slate-300">Dealership-level attention without the shop visit.</p>
                   </div>
-                  <div className="space-y-4">
+                  <div className="mt-6 space-y-4">
                     {["Engine & transmission repair", "Diesel, RV & mobile service", "Roadside assistance", "Hydraulics, welding & light body work"].map((item) => (
                       <div key={item} className="flex items-center gap-3 rounded-2xl bg-white/10 p-4">
                         <CheckCircle className="h-5 w-5 text-slate-200" />
                         <span className="text-sm font-medium">{item}</span>
                       </div>
                     ))}
+                  </div>
+
+                  <div className="mt-auto pt-6">
+                    <a href={financingUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-between rounded-2xl bg-white/10 p-4 hover:bg-white/20 transition">
+                      <div className="flex items-center gap-3">
+                        <ShieldCheck className="h-5 w-5 text-white" />
+                        <span className="text-sm font-semibold">Financing Available</span>
+                      </div>
+                      <span className="text-xs text-slate-300">Apply →</span>
+                    </a>
                   </div>
                 </div>
               </div>
