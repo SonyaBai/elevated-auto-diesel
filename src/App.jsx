@@ -255,7 +255,7 @@ export default function ElevatedAutoDieselRepair() {
                     ))}
                   </div>
 
-                  <div className="mt-auto pt-6">
+                  <div className="mt-6">
                     <a href={financingUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-between rounded-2xl bg-white/10 p-4 hover:bg-white/20 transition">
                       <div className="flex items-center gap-3">
                         <ShieldCheck className="h-5 w-5 text-white" />
