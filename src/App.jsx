@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Phone, MapPin, Wrench, Truck, ShieldCheck, Star, Clock, CheckCircle, Mail, ArrowRight } from "lucide-react";
+import { Phone, MapPin, Wrench, Truck, ShieldCheck, Star, Clock, CheckCircle, Mail, ArrowRight, CreditCard } from "lucide-react";
 
 const services = [
   {
@@ -41,10 +41,26 @@ const services = [
   },
 ];
 
-const serviceAreas = ["Fort Collins", "Loveland", "Windsor", "Timnath", "Berthoud", "Wellington", "Laporte", "Johnstown", "Greeley", "Milliken", "Larimer County"];
+const serviceAreas = ["Fort Collins", "Loveland", "Windsor", "Timnath", "Berthoud", "Wellington", "Laporte", "Johnstown", "Greeley", "Milliken", "Larimer County", "Weld County"];
 
 const googleReviewsUrl = "https://www.google.com/search?q=evelvated+dieserl+reviews&rlz=1C5CHFA_enUS1021US1038&oq=evelvated+dieserl+reviews&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIJCAEQABgNGIAEMg0IAhAAGIYDGIAEGIoFMg0IAxAAGIYDGIAEGIoFMg0IBBAAGIYDGIAEGIoFMgcIBRAAGO8FMgcIBhAAGO8FMgoIBxAAGIAEGKIEMgoICBAAGIAEGKIE0gEJNTY1NGowajE1qAIIsAIB8QUqll-R0_j0Nw&sourceid=chrome&ie=UTF-8#lrd=0x876953b5ed9bed75:0xa9d645c1dc45f679,1,,,,";
 const financingUrl = "https://kolify.com";
+const autoRepairScoreUrl = "https://autorepairscore.com/co/loveland/elevated-diesel-repair-llc-loveland-colorado";
+
+const reviewPlatforms = [
+  {
+    name: "Google Reviews",
+    description: "View verified customer feedback directly on Google.",
+    url: googleReviewsUrl,
+    cta: "View Google Reviews",
+  },
+  {
+    name: "AutoRepairScore",
+    description: "See additional reputation signals on an independent auto repair review platform.",
+    url: autoRepairScoreUrl,
+    cta: "View AutoRepairScore Profile",
+  },
+];
 
 // Add real, approved 5-star Google review snippets here when available.
 const fiveStarReviews = [
@@ -169,8 +185,8 @@ export default function ElevatedAutoDieselRepair() {
             />
           </a>
           <div className="flex shrink-0 items-center gap-2 md:hidden">
-            <a href="tel:+19709660473" className="rounded-xl bg-slate-950 px-3 py-2 text-xs font-semibold text-white">Call</a>
-            <a href="#contact" className="rounded-xl border border-slate-300 px-3 py-2 text-xs font-semibold text-slate-950">Book</a>
+            <a href="tel:+19709660473" className="rounded-xl bg-slate-950 px-3 py-2 text-xs font-semibold text-white shadow-sm">Call</a>
+            <a href="#contact" className="rounded-xl border border-slate-300 bg-white px-3 py-2 text-xs font-semibold text-slate-950 shadow-sm">Book</a>
           </div>
           <nav className="hidden items-center gap-8 text-sm font-medium text-slate-700 md:flex">
             <a href="#services" className="hover:text-slate-950">Services</a>
@@ -196,18 +212,23 @@ export default function ElevatedAutoDieselRepair() {
                 className="mb-5 block w-full max-w-[320px] rounded-2xl bg-white p-2 shadow-2xl sm:max-w-md sm:rounded-3xl sm:p-4"
               />
               <div className="flex max-w-full flex-col gap-3">
-                <p className="inline-flex max-w-full rounded-full border border-white/15 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-300 sm:px-4 sm:text-sm sm:tracking-[0.25em]">
-                  Premium Mobile Auto & Diesel Repair
-                </p>
+                <div className="flex flex-wrap gap-2">
+                  <p className="inline-flex max-w-full rounded-full border border-white/15 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-300 sm:px-4 sm:text-sm sm:tracking-[0.25em]">
+                    Premium Mobile Auto & Diesel Repair
+                  </p>
+                  <p className="inline-flex max-w-full rounded-full border border-white/15 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-300 sm:px-4 sm:text-sm sm:tracking-[0.25em]">
+                    Larimer & Weld County
+                  </p>
+                </div>
                 <a href={financingUrl} target="_blank" rel="noopener noreferrer" className="inline-flex w-fit items-center gap-2 rounded-full bg-white/10 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-white hover:bg-white/20 sm:px-4 sm:text-xs sm:tracking-[0.25em]">
                   <ShieldCheck className="h-4 w-4" /> Financing Available
                 </a>
               </div>
               <h1 className="mt-5 max-w-full text-3xl font-bold leading-tight tracking-tight text-white sm:text-5xl md:text-7xl">
-                Elevated Auto & Diesel Service, Delivered to You.
+                Premium Auto, Diesel & Mobile Repair — Built Around Your Schedule.
               </h1>
               <p className="mt-5 max-w-full text-base leading-7 text-slate-300 sm:max-w-xl sm:text-lg sm:leading-8">
-                Elevated Auto & Diesel Repair provides modern mobile auto repair, diesel repair, RV repair, roadside assistance, hydraulic cylinder repair, welding fabrication, and light autobody repair throughout Loveland, Larimer County, and surrounding Northern Colorado communities.
+                Elevated Auto & Diesel Repair delivers professional mobile auto repair, diesel service, RV repair, roadside assistance, hydraulic cylinder repair, welding fabrication, and light autobody repair throughout Loveland, Larimer County, Weld County, and surrounding Northern Colorado communities.
               </p>
               <div className="mt-7 grid max-w-full gap-3 sm:grid-cols-2 lg:flex lg:flex-wrap">
                 <a href={financingUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-w-0 items-center justify-center rounded-2xl border border-white/20 px-4 py-3 text-center text-sm font-semibold text-white transition hover:bg-white/10 sm:px-6">
@@ -222,12 +243,11 @@ export default function ElevatedAutoDieselRepair() {
                 </a>
               </div>
               <div className="mt-8 grid max-w-xl grid-cols-1 gap-3 text-white sm:grid-cols-3 sm:gap-4">
-              {/* Gallery Preview */}
-              <div className="sm:col-span-3 grid grid-cols-3 gap-2 sm:gap-3">
-                {galleryImages.slice(0, 6).map((image) => (
-                  <img key={image.src} src={image.src} alt={`${image.title} - Elevated Auto & Diesel Repair`} className="h-20 w-full rounded-xl object-cover sm:h-24" />
-                ))}
-              </div>
+                <div className="sm:col-span-3 grid grid-cols-3 gap-2 sm:gap-3">
+                  {galleryImages.slice(0, 6).map((image) => (
+                    <img key={image.src} src={image.src} alt={`${image.title} - Elevated Auto & Diesel Repair`} className="h-20 w-full rounded-xl object-cover sm:h-24" />
+                  ))}
+                </div>
                 <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
                   <Star className="mb-2 h-5 w-5" />
                   <p className="text-sm text-slate-300">70+ excellent Google reviews</p>
@@ -237,8 +257,8 @@ export default function ElevatedAutoDieselRepair() {
                   <p className="text-sm text-slate-300">Mobile service available</p>
                 </div>
                 <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                  <ShieldCheck className="mb-2 h-5 w-5" />
-                  <p className="text-sm text-slate-300">Professional, reliable repairs</p>
+                  <CreditCard className="mb-2 h-5 w-5" />
+                  <p className="text-sm text-slate-300">Financing available through Kolify</p>
                 </div>
               </div>
             </motion.div>
@@ -274,19 +294,41 @@ export default function ElevatedAutoDieselRepair() {
           </div>
         </section>
 
-        <section id="reviews" className="px-5 py-24 md:px-8">
-          <div className="mx-auto max-w-5xl rounded-[2rem] border border-slate-200 bg-white p-8 text-center shadow-sm md:p-12">
+        <section id="reviews" className="px-4 py-16 md:px-8 md:py-24">
+          <div className="mx-auto max-w-6xl rounded-[2rem] border border-slate-200 bg-white p-6 text-center shadow-sm md:p-12">
             <div className="mx-auto mb-6 flex w-fit items-center gap-2 rounded-full bg-slate-950 px-5 py-2 text-white">
               <Star className="h-5 w-5" />
-              <span className="text-sm font-semibold uppercase tracking-[0.2em]">Google Reviews</span>
+              <span className="text-sm font-semibold uppercase tracking-[0.2em]">Customer Reputation</span>
             </div>
-            <h2 className="text-4xl font-bold tracking-tight text-slate-950 md:text-5xl">Trusted by 70+ 5-Star Reviews on Google</h2>
-            <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-slate-600">
-              Read verified Google reviews from customers who trust Elevated Auto & Diesel Repair for mobile auto repair, diesel service, welding, and roadside support across Loveland and Larimer County.
+            <h2 className="text-3xl font-bold tracking-tight text-slate-950 md:text-5xl">Trusted by 70+ 5-Star Reviews on Google</h2>
+            <p className="mx-auto mt-5 max-w-3xl text-base leading-7 text-slate-600 md:text-lg md:leading-8">
+              Customers across Loveland, Larimer County, and Weld County trust Elevated Auto & Diesel Repair for professional mobile repair, diesel service, welding, roadside support, and honest communication.
             </p>
 
+            <div className="mt-8 grid gap-4 md:grid-cols-3">
+              <div className="rounded-3xl border border-slate-200 bg-slate-50 p-6">
+                <div className="mb-3 flex justify-center gap-1 text-slate-950">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <Star key={star} className="h-5 w-5 fill-current" />
+                  ))}
+                </div>
+                <p className="text-3xl font-bold text-slate-950">70+</p>
+                <p className="mt-2 text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">Google Reviews</p>
+              </div>
+              <div className="rounded-3xl border border-slate-200 bg-slate-50 p-6">
+                <ShieldCheck className="mx-auto mb-3 h-7 w-7 text-slate-950" />
+                <p className="text-3xl font-bold text-slate-950">Verified</p>
+                <p className="mt-2 text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">Public Profiles</p>
+              </div>
+              <div className="rounded-3xl border border-slate-200 bg-slate-50 p-6">
+                <Truck className="mx-auto mb-3 h-7 w-7 text-slate-950" />
+                <p className="text-3xl font-bold text-slate-950">Local</p>
+                <p className="mt-2 text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">Northern Colorado</p>
+              </div>
+            </div>
+
             {fiveStarReviews.length > 0 && (
-              <div className="mx-auto mt-10 max-w-3xl rounded-3xl border border-slate-200 bg-slate-50 p-8 shadow-sm">
+              <div className="mx-auto mt-8 max-w-3xl rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm md:p-8">
                 <div className="mb-5 flex justify-center gap-1 text-slate-950">
                   {[1, 2, 3, 4, 5].map((star) => (
                     <Star key={star} className="h-6 w-6 fill-current" />
@@ -298,7 +340,7 @@ export default function ElevatedAutoDieselRepair() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.45 }}
                 >
-                  <p className="text-xl font-medium leading-9 text-slate-800">“{fiveStarReviews[activeReview].text}”</p>
+                  <p className="text-lg font-medium leading-8 text-slate-800 md:text-xl md:leading-9">“{fiveStarReviews[activeReview].text}”</p>
                   <p className="mt-5 text-sm font-semibold uppercase tracking-[0.25em] text-slate-500">{fiveStarReviews[activeReview].name}</p>
                 </motion.div>
                 <div className="mt-6 flex justify-center gap-2">
@@ -315,9 +357,30 @@ export default function ElevatedAutoDieselRepair() {
               </div>
             )}
 
+            <div className="mt-8 grid gap-4 md:grid-cols-2">
+              {reviewPlatforms.map((platform) => (
+                <a
+                  key={platform.name}
+                  href={platform.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group rounded-3xl border border-slate-200 bg-white p-6 text-left shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+                >
+                  <div className="flex items-start justify-between gap-4">
+                    <div>
+                      <p className="text-xl font-bold text-slate-950">{platform.name}</p>
+                      <p className="mt-2 leading-7 text-slate-600">{platform.description}</p>
+                    </div>
+                    <ArrowRight className="h-5 w-5 shrink-0 text-slate-400 transition group-hover:translate-x-1 group-hover:text-slate-950" />
+                  </div>
+                  <p className="mt-5 text-sm font-semibold uppercase tracking-[0.2em] text-slate-950">{platform.cta}</p>
+                </a>
+              ))}
+            </div>
+
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <a href={googleReviewsUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-2xl bg-slate-950 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-slate-800">
-                <Star className="mr-2 h-4 w-4" /> View All 5-Star Google Reviews
+                <Star className="mr-2 h-4 w-4" /> View All Google Reviews
               </a>
               <a href="tel:+19709660473" className="inline-flex items-center justify-center rounded-2xl border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-slate-100">
                 <Phone className="mr-2 h-4 w-4" /> Call 970-966-0473
@@ -326,7 +389,7 @@ export default function ElevatedAutoDieselRepair() {
           </div>
         </section>
 
-        <section id="gallery" className="bg-slate-50 px-5 py-24 md:px-8">
+        <section id="gallery" className="bg-slate-50 px-4 py-16 md:px-8 md:py-24">
           <div className="mx-auto max-w-7xl">
             <SectionHeader
               eyebrow="Gallery"
@@ -348,7 +411,7 @@ export default function ElevatedAutoDieselRepair() {
           </div>
         </section>
 
-        <section id="services" className="px-5 py-24 md:px-8">
+        <section id="services" className="px-4 py-16 md:px-8 md:py-24">
           <div className="mx-auto max-w-7xl">
             <SectionHeader
               eyebrow="Services"
@@ -369,7 +432,27 @@ export default function ElevatedAutoDieselRepair() {
           </div>
         </section>
 
-        <section id="about" className="bg-white px-5 py-24 md:px-8">
+        <section id="financing" className="bg-slate-950 px-4 py-16 text-white md:px-8 md:py-24">
+          <div className="mx-auto grid max-w-7xl items-center gap-8 rounded-[2rem] border border-white/10 bg-white/5 p-6 md:grid-cols-[1.2fr_0.8fr] md:p-12">
+            <div>
+              <p className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-slate-400">Flexible Payment Options</p>
+              <h2 className="text-3xl font-bold tracking-tight md:text-5xl">Financing Available Through Kolify</h2>
+              <p className="mt-5 max-w-3xl text-base leading-7 text-slate-300 md:text-lg md:leading-8">
+                Unexpected repairs don’t have to delay getting back on the road. Customers can apply for financing through Kolify and move forward with necessary repairs while spreading payments over time.
+              </p>
+            </div>
+            <div className="rounded-3xl bg-white p-6 text-slate-950 shadow-2xl">
+              <CreditCard className="mb-4 h-8 w-8" />
+              <h3 className="text-2xl font-bold">Repair Now. Pay Over Time.</h3>
+              <p className="mt-3 leading-7 text-slate-600">Use financing for larger repairs, diesel service, RV work, welding fabrication, and unexpected breakdowns.</p>
+              <a href={financingUrl} target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex w-full items-center justify-center rounded-2xl bg-slate-950 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800">
+                Apply for Financing <ArrowRight className="ml-2 h-4 w-4" />
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section id="about" className="bg-white px-4 py-16 md:px-8 md:py-24">
           <div className="mx-auto grid max-w-7xl items-center gap-12 md:grid-cols-2">
             <div>
               <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">About</p>
@@ -405,8 +488,8 @@ export default function ElevatedAutoDieselRepair() {
           <div className="mx-auto max-w-7xl">
             <SectionHeader
               eyebrow="Service Areas"
-              title="Serving Larimer County & Surrounding Communities"
-              text="Premium mobile auto repair, diesel repair, RV repair, roadside assistance, and specialty repair services across Northern Colorado."
+              title="Serving Larimer & Weld County Communities"
+              text="Premium mobile auto repair, diesel repair, RV repair, roadside assistance, and specialty repair services across Larimer County, Weld County, and Northern Colorado."
             />
             <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
               {serviceAreas.map((area) => (
@@ -451,7 +534,7 @@ export default function ElevatedAutoDieselRepair() {
           </div>
         </section>
 
-        <section id="contact" className="px-5 py-24 md:px-8">
+        <section id="contact" className="px-4 py-16 md:px-8 md:py-24">
           <div className="mx-auto grid max-w-7xl gap-8 rounded-[2rem] bg-slate-950 p-8 text-white md:grid-cols-2 md:p-12">
             <div>
               <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-slate-400">Request Service</p>
@@ -518,6 +601,17 @@ export default function ElevatedAutoDieselRepair() {
           <p>Mobile auto repair, diesel repair, RV repair, roadside assistance, welding, hydraulics, and light autobody repair in Larimer County, CO.</p>
         </div>
       </footer>
+
+      <div className="fixed inset-x-0 bottom-0 z-50 border-t border-slate-200 bg-white/95 p-3 shadow-2xl backdrop-blur md:hidden">
+        <div className="mx-auto grid max-w-md grid-cols-2 gap-3">
+          <a href="tel:+19709660473" className="inline-flex items-center justify-center rounded-2xl bg-slate-950 px-4 py-3 text-sm font-semibold text-white">
+            <Phone className="mr-2 h-4 w-4" /> Call Now
+          </a>
+          <a href="#contact" className="inline-flex items-center justify-center rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm font-semibold text-slate-950">
+            Book Service
+          </a>
+        </div>
+      </div>
     </div>
   );
 }
