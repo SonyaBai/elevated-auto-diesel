@@ -44,7 +44,7 @@ const services = [
 const serviceAreas = ["Fort Collins", "Loveland", "Windsor", "Timnath", "Berthoud", "Wellington", "Laporte", "Johnstown", "Greeley", "Milliken", "Larimer County", "Weld County"];
 
 const googleReviewsUrl = "https://www.google.com/search?q=evelvated+dieserl+reviews&rlz=1C5CHFA_enUS1021US1038&oq=evelvated+dieserl+reviews&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIJCAEQABgNGIAEMg0IAhAAGIYDGIAEGIoFMg0IAxAAGIYDGIAEGIoFMg0IBBAAGIYDGIAEGIoFMgcIBRAAGO8FMgcIBhAAGO8FMgoIBxAAGIAEGKIEMgoICBAAGIAEGKIE0gEJNTY1NGowajE1qAIIsAIB8QUqll-R0_j0Nw&sourceid=chrome&ie=UTF-8#lrd=0x876953b5ed9bed75:0xa9d645c1dc45f679,1,,,,";
-const financingUrl = "https://kolify.com";
+const financingUrl = "https://koalifi.com";
 const autoRepairScoreUrl = "https://autorepairscore.com/co/loveland/elevated-diesel-repair-llc-loveland-colorado";
 
 const reviewPlatforms = [
@@ -243,10 +243,15 @@ export default function ElevatedAutoDieselRepair() {
                 </a>
               </div>
               <div className="mt-8 grid max-w-xl grid-cols-1 gap-3 text-white sm:grid-cols-3 sm:gap-4">
-                <div className="sm:col-span-3 grid grid-cols-3 gap-2 sm:gap-3">
-                  {galleryImages.slice(0, 6).map((image) => (
-                    <img key={image.src} src={image.src} alt={`${image.title} - Elevated Auto & Diesel Repair`} className="h-20 w-full rounded-xl object-cover sm:h-24" />
-                  ))}
+                <div className="sm:col-span-3 grid grid-cols-1 gap-3">
+                  <video
+                    src="/videos/repair-demo.mp4"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-48 sm:h-64 rounded-2xl object-cover"
+                  />
                 </div>
                 <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
                   <Star className="mb-2 h-5 w-5" />
@@ -258,7 +263,7 @@ export default function ElevatedAutoDieselRepair() {
                 </div>
                 <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
                   <CreditCard className="mb-2 h-5 w-5" />
-                  <p className="text-sm text-slate-300">Financing available through Kolify</p>
+                  <p className="text-sm text-slate-300">Financing available through Koalifi</p>
                 </div>
               </div>
             </motion.div>
@@ -436,9 +441,9 @@ export default function ElevatedAutoDieselRepair() {
           <div className="mx-auto grid max-w-7xl items-center gap-8 rounded-[2rem] border border-white/10 bg-white/5 p-6 md:grid-cols-[1.2fr_0.8fr] md:p-12">
             <div>
               <p className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-slate-400">Flexible Payment Options</p>
-              <h2 className="text-3xl font-bold tracking-tight md:text-5xl">Financing Available Through Kolify</h2>
+              <h2 className="text-3xl font-bold tracking-tight md:text-5xl">Financing Available Through Koalifi</h2>
               <p className="mt-5 max-w-3xl text-base leading-7 text-slate-300 md:text-lg md:leading-8">
-                Unexpected repairs don’t have to delay getting back on the road. Customers can apply for financing through Kolify and move forward with necessary repairs while spreading payments over time.
+                Unexpected repairs don’t have to delay getting back on the road. Customers can apply for financing through Koalifi and move forward with necessary repairs while spreading payments over time.
               </p>
             </div>
             <div className="rounded-3xl bg-white p-6 text-slate-950 shadow-2xl">
